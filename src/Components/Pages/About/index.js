@@ -1,6 +1,6 @@
 /** @format */
 
-import React from "react";
+import React, { useEffect } from "react";
 import {
   Box,
   Container,
@@ -10,10 +10,14 @@ import {
   Divider,
   Flex,
   Button,
+  Link,
 } from "@chakra-ui/react";
-import { Link } from "react-router-dom";
+import { ExternalLinkIcon } from "@chakra-ui/icons";
 
 const AboutMe = () => {
+  useEffect(() => {
+    document.title = "About | AIT Lab";
+  }, []);
   return (
     <Box py={8} minHeight="100vh">
       <Container maxW="container.xl">
@@ -103,7 +107,8 @@ const AboutMe = () => {
             _hover={{ color: "blue.800", textDecoration: "underline" }}
           >
             September 2020
-          </Link>{" "}
+            <ExternalLinkIcon mx="2px" />
+          </Link>
           issue.
         </Text>
 
@@ -191,10 +196,16 @@ const AboutMe = () => {
               plain language with several real-life examples. It is suitable for
               anyone interested in highway safety and AI and it provides an
               illuminating and accessible introduction to this fast-growing
-              research trend. Material supplementing the book can be found at
-              https://github.com/subasish/AI_in_HighwaySafety. It offers a
-              variety of supplemental materials, including data sets and R
-              codes.
+              research trend. Material supplementing the book can be found at{" "}
+              <Link
+                href="https://github.com/subasish/AI_in_HighwaySafety"
+                isExternal
+              >
+                https://github.com/subasish/AI_in_HighwaySafety{" "}
+                <ExternalLinkIcon />
+              </Link>
+              . It offers a variety of supplemental materials, including data
+              sets and R codes.
             </Text>
             {/* Download PDF Button */}
             <Link
@@ -208,6 +219,7 @@ const AboutMe = () => {
                 _hover={{ bg: "blue.500", color: "white" }}
               >
                 Order The Book
+                <ExternalLinkIcon mx={2} />
               </Button>
             </Link>
           </Box>

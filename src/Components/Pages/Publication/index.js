@@ -91,6 +91,7 @@ const ResearchPapers = () => {
         setSearching(false);
       }, 500); // 500ms debounce
     },
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     [sortByYear]
   );
 
